@@ -1,0 +1,26 @@
+{
+  "name": "briceth",
+  "homepage": "https://github.com/briceth/miewer_api",
+  "authors": [
+    "Brice Tessier Huort <tessierhuort@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.0-rc.2",
+    "angular-route": "1.5.8",
+    "angular-resource": "1.5.8"
+  },
+  "resolutions": {
+    "angular": "1.5.8"
+  }
+}
