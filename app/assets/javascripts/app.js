@@ -2,18 +2,22 @@
 //   .controller('MovieCtrl', function HomeController($scope) {
 //     $scope.entries = [{title: "les trois freres"}]
 //   })
+
 (function(){
 
-    angular.module('MovieApp', ['ngRoute'])
-    .controller('MovieCtrl', function($scope) {
-      $scope.entries = [
-      {title: "les trois freres"},
-      {title: "Troie"},
-      {title: "batman"}];
+var app = angular.module('MovieApp', ['ngResource'])
+
+    angular.module('MovieApp', ['ngRoute', 'ngResource'])
+    .controller('MovieCtrl', function($scope, $resource) {
+
+      Entry = $resource('/api/v1/movies/:id', {id: "@id"}, {update: {method: "PUT"}})
+
+      $scope.entries = Entry.query()
 
 
         $scope.addEntry = function () {
-         $scope.entries.push($scope.newEntry);
+        entry = Entry.save($scope.newEntry)
+         $scope.entries.push(entry);
          $scope.newEntry = {};
        };
     });

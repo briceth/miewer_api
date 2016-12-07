@@ -8,6 +8,10 @@ class Api::V1::MoviesController < Api::V1::BaseController
   def show
   end
 
+  def new
+    authorize @movie
+  end
+
   def create
     @movie = Movie.new(movie_params)
     @movie.user = current_user
@@ -20,7 +24,12 @@ class Api::V1::MoviesController < Api::V1::BaseController
   end
 
   def destroy
+  end
 
+  private
+
+  def movie_params
+    params.require(:movie).permit(:title)
   end
 
   def set_movie
