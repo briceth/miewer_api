@@ -10,7 +10,7 @@ var app = angular.module('MovieApp', ['ngResource'])
       $scope.entries = Movie.query();
 
         $scope.addEntry = function () {
-        movie = Entry.save($scope.newEntry);
+        movie = Movie.save($scope.newEntry);
          $scope.entries.push(movie);
          $scope.newEntry = {};
        };
