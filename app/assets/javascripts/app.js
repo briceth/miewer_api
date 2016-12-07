@@ -1,4 +1,4 @@
-angular.module('HelloApp', [])
+angular.module('MovieApp', ['ngRoute'])
   .controller('HomeController', function HomeController($scope) {
     $scope.foo = 'bar';
   })

@@ -1,5 +1,31 @@
-<div ng-app="HelloApp">
-  <div ng-controller="HomeController">
-    {{ foo }}
+<div ng-view></div>
+
+<div ng-controller="MainCtrl">
+    <div class="container">
+
+      <h1 ng-show="movies.length">Movies</h1>
+
+      <table class="table table-striped" ng-show="movies.length">
+        <thead>
+          <th>Title</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in movies">
+          <td ng-click="activeMovie(movie)">{{movie.title}}</td>
+          <td><button class="btn btn-danger" ng-click="delete(movie)">Delete</button></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h3 ng-if="!editing">New Post</h3>
+      <h3 ng-if="editing">Edit Post</h3>
+
+      <form ng-submit="save(movie)">
+        <input ng-model="movie.title">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+        <button ng-if="editing" class="btn btn-success" ng-click="newMovie()">New Movie</button>
+
+    </div>
   </div>
-</div>
