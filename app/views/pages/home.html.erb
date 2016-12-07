@@ -7,11 +7,11 @@
         <input type="text" ng-model="newEntry.title">
         <input type="submit" value="Add">
       </form>
-      <ul>
-        <li ng-repeat="entry in entries">
+      <p>
+        <div ng-repeat="entry in entries">
          <p>{{entry.title}}</p>
-        </li>
-      </ul>
+        </div>
+      </p>
     </div>
   </div>
 </div>
