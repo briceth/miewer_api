@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="container">
-    <div class="form-group" ng-controller="MovieCtrl">
+    <div class="form-group" ng-controller="MoviesIndexController">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
         <h1>Post a film</h1>
           <form ng-submit="addEntry()">
@@ -17,9 +17,11 @@
         <div ng-repeat="movie in movies">
           <div class="col-xs-12 col-sm-3">
             <div class="card">
+            <a ng-href="#/movies/{{movie.id}}">
               <h4><strong>titre:</strong>{{movie.title}}</h4>
               <p><strong>résumé:</strong>{{movie.description}}</p>
               <!-- <img ng-src="{{movie.picture}}"" alt="picture"> -->
+            </a>
           </div>
         </div>
       </div>

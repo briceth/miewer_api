@@ -1,7 +1,9 @@
+<div ng-if="movie.picture"></div>
+
 <table class="table movietable">
     <tr>
         <td><h3>Details for {{movie.title}}</h3></td>
-        <td></td>
+        <td>ajouté par {{note.user || note.user.username }}</td>
     </tr>
     <tr>
         <td>Movie Title</td>
@@ -9,7 +11,7 @@
     </tr>
     <tr>
         <td>Director</td>
-        <td>{{movie.director}}</td>
+        <td>{{movie.description}}</td>
     </tr>
     <tr>
         <td>Release Year</td>

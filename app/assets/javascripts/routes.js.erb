@@ -2,13 +2,14 @@ angular.module('MovieApp')
 .config(function($routeProvider){
   $routeProvider.when('/movies', {
     templateUrl: "<%= asset_path('templates/index.html') %>",
+    controller: 'MoviesIndexController',
   })
-  .when('/movie/:id', {
-    templateUrl: 'templates/show.html',
-    controller: 'MovieCtrl'
+  .when('/movies/:id', {
+    templateUrl: "<%= asset_path('templates/show.html') %>",
+    controller: 'MoviesShowController',
   })
   .when('/', {
-    templateUrl: 'templates/index.html',
+    templateUrl: "<%= asset_path('templates/index.html') %>",
   })
   .otherwise( { redirectTo: '/'} );
 });
