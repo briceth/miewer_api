@@ -1,0 +1,75 @@
+angular.module('movieApp',['ui.router','ngResource','movieApp.controllers','movieApp.services']);
+
+angular.module('movieApp').config(function($stateProvider,$httpProvider){
+    $stateProvider.state('movies',{
+        url:'/movies',
+        templateUrl:'partials/movies.html',
+        controller:'MovieListController'
+    }).state('viewMovie',{
+       url:'/movies/:id/view',
+       templateUrl:'partials/movie-view.html',
+       controller:'MovieViewController'
+    }).state('newMovie',{
+        url:'/movies/new',
+        templateUrl:'partials/movie-add.html',
+        controller:'MovieCreateController'
+    }).state('editMovie',{
+        url:'/movies/:id/edit',
+        templateUrl:'partials/movie-edit.html',
+        controller:'MovieEditController'
+    });
+}).run(function($state){
+   $state.go('movies');
+});
+
+
+
+
+
+
+
+ // angular.module('MovieApp', ['ngRoute', 'ngResource'])
+ //    .controller('MovieCtrl', function($scope, $resource) {
+
+ //      Movie = $resource('/api/v1/movies/:id', {id: "@id"}, {update: {method: "PUT"}})
+
+ //      $scope.movies = Movie.query();
+
+ //        $scope.addEntry = function () {
+ //        movie = Movie.save($scope.newMovie);
+ //         $scope.movies.push(movie);
+ //         $scope.newMovie = {};
+ //       };
+ //    });
+
+    ////////////////////////////////////////////////////////////////////
+    // var app = angular.module('MovieApp', ['ngRoute', 'ngResource'])
+
+    //   app.controller('MovieCtrl', function($scope, $http) {
+
+    //   var cinema = this;
+
+    //   $scope.titleModel = {};
+    //   $scope.descriptionModel = {};
+
+    //   cinema.movies = [];
+
+    //   $scope.onSubmit = function () {
+
+    //     $http({
+    //       method: "post",
+    //       url: '/api/v1/movies/',
+    //       data:$scope.titleModel}
+    //       ).success(function(data) {
+    //       console.log(":)")
+    //       console.log($scope.titleModel);
+    //       console.log($scope.descriptionModel);
+    //       console.log(data);
+
+    //     }).error(function(data) {
+    //       console.log(":(")
+    //     });
+
+
+    //   };
+    // });

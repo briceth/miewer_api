@@ -19,6 +19,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'bower-rails', '~> 0.10.0'
+gem 'angular-rails-templates'
+
 
 group :development, :test do
   gem 'binding_of_caller'

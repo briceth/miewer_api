@@ -2,6 +2,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
-//= require angular-route
+//= require angular-ui-router
 //= require angular-resource
 //= require_tree .
