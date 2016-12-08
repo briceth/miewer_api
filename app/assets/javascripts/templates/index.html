@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="form-group" ng-controller="MovieCtrl">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <h1>Post a film</h1>
+          <form ng-submit="addEntry()">
+            <label for="title">film</label>
+            <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film">
+            <label for="description">résumé</label>
+            <input id="description" type="text" class="form-control" ng-model="newMovie.description" placeholder="entrez un résumé">
+          <!--   <label for="file">choisissez une photo</label>
+            <input type="file" name="nom" ng-model="newMovie.picture" /> -->
+            <input type="submit" value="Add" class="btn btn-warning">
+
+          </form>
+      </div>
+        <div ng-repeat="movie in movies">
+          <div class="col-xs-12 col-sm-3">
+            <div class="card">
+              <h4><strong>titre:</strong>{{movie.title}}</h4>
+              <p><strong>résumé:</strong>{{movie.description}}</p>
+              <!-- <img ng-src="{{movie.picture}}"" alt="picture"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

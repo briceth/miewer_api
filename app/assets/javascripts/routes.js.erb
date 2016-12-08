@@ -1,0 +1,14 @@
+angular.module('MovieApp')
+.config(function($routeProvider){
+  $routeProvider.when('/movies', {
+    templateUrl: "<%= asset_path('templates/index.html') %>",
+  })
+  .when('/movie/:id', {
+    templateUrl: 'templates/show.html',
+    controller: 'MovieCtrl'
+  })
+  .when('/', {
+    templateUrl: 'templates/index.html',
+  })
+  .otherwise( { redirectTo: '/'} );
+});

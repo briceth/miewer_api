@@ -20,6 +20,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'bower-rails', '~> 0.10.0'
 gem 'angular-rails-templates'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 
 
 group :development, :test do
