@@ -1,13 +1,4 @@
-<form class="form-horizontal" role="form" ng-submit="updateMovie()">
-
-
-    <div ng-include="'partials/_form.html'"></div>
-
-
-</form>
-
-<!-- <form ng-submit="addEntry()" novalidate>
-  <label for="title">film</label>
+<label for="title">film</label>
   <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film" required><br>
   <label for="description">résumé</label>
   <input id="description" type="text" class="form-control" ng-model="newMovie.description" placeholder="entrez un résumé" required><br>
@@ -28,9 +19,9 @@
     <option value="5">5</option>
   </select><br><br>
   <label for="checkbox">en salle?</label>
-  <input type="checkbox" ng-model="newMovie.available"><br> -->
+  <input type="checkbox" ng-model="newMovie.available"><br>
   <!-- <label for="file">choisissez une photo</label>
   <input type="file" name="nom" ng-model="newMovie.picture" /><br> -->
   <!-- <div>reviewForm is {{reviewForm.$valid}}</div> -->
- <!--  <input type="submit" value="Add" class="btn btn-warning"><br>
-</form> -->
+  <input type="submit" value="Add" class="btn btn-warning"><br><br>
+  <a class="btn btn-danger" ng-href="#/movies/{{movie.id}}">retour</a>

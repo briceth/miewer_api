@@ -9,6 +9,10 @@ angular.module('MovieApp')
     templateUrl: "<%= asset_path('templates/show.html') %>",
     controller: 'MoviesShowController',
   })
+  .when('/movies/:id/edit', {
+  templateUrl: "<%= asset_path('templates/edit.html') %>",
+  controller: "MovieEditController",
+  })
   .when('/', {
     templateUrl: "<%= asset_path('templates/index.html') %>",
   })

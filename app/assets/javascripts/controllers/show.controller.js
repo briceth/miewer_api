@@ -13,13 +13,15 @@
 app.controller("MoviesShowController", function($scope, $resource, $routeParams, Movie) {
   $scope.movie = Movie.show({ id: $routeParams.id });
 
+    var controller = this;
 
-  var  Review = $resource('/api/v1/movies/:id', {id: "@id"}, {update: {method: "PUT"}})
+    console.log($scope.movie);
 
-  $scope.reviews = Review.query();
+   $scope.addReview = function() {
 
-  console.log($scope.reviews);
+    console.log($scope.newReview);
 
 
+  };
 
 });

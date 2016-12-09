@@ -1,5 +1,5 @@
 class Api::V1::MoviesController < Api::V1::BaseController
-  before_action :set_movie, only: [ :show ]
+  before_action :set_movie, only: [ :show, :edit ]
 
   def index
     @movies = policy_scope(Movie)
@@ -24,13 +24,19 @@ class Api::V1::MoviesController < Api::V1::BaseController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   def destroy
   end
 
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :description, :picture, :category, :rating, :available)
+    params.require(:movie).permit(:title, :description, :picture, :category, :rating, :available, :reviews)
   end
 
   def set_movie

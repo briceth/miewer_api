@@ -1,14 +1,20 @@
-angular.module('MovieApp')
-.controller('MoviesIndexController', function($scope, $resource) {
+app.controller("MoviesIndexController", function($scope, $location, Movie) {
+  $scope.movies = Movie.index();
 
+  $scope.new = function() {
+    $location.path("/movies/new");
+  };
 
-  var  Movie = $resource('/api/v1/movies/:id', {id: "@id"}, {update: {method: "PUT"}})
 
   $scope.movies = Movie.query();
+
+    // console.log($scope.movies)
 
     $scope.addEntry = function () {
     movie = Movie.save($scope.newMovie);
      $scope.movies.push(movie);
      $scope.newMovie = {};
    };
+
+
 });

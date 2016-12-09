@@ -3,32 +3,36 @@
 
     <infos-movie title="movie.title" description="movie.description" category="movie.category" rating="movie.rating" available="movie.available"></infos-movie>
 
-
-    <a class="btn btn-primary" ng-href="#/movies/edit/{{movie.id}}">Edit</a>
+    <a class="btn btn-primary" ng-href="#/movies/{{movie.id}}/edit">Edit</a>
+    <!-- <a class="btn btn-danger"  ng-click="deleteMovie(movie)">Delete</a> -->
     <a class="btn btn-warning" ng-href="#/movies/">retour</a>
   </div>
-</div>
 
-<div class="col-xs-12 col-sm-6">
   <div ng-show="movie.picture">
     <img ng-src="{{picture}}"" alt="picture">
   </div>
 
-    <form-review></form-review>
+<div class="col-xs-12 col-sm-6">
 
-  <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(movie)" novalidate>
+    <!-- <form-review></form-review> -->
 
+  <form name="reviewForm" ng-controller="MoviesShowController" ng-submit="addReview()">
+
+  <div ng-repeat="movie in movies">
     <blockquote>
-      <p>{{reviewCtrl.review.body}}</p>
+      <p>{{movie.reviews.body}}</p>
     </blockquote>
+  </div>
 
     <label for="body">Commentaires</label>
-
-    <textarea name="" id="body" cols="15  " rows="2" ng-model="review.body" placeholder="Ecrivez un commentaire" class="form-control" required></textarea>
-    <div>reviewForm is {{reviewForm.$valid}}</div>
+    <textarea name="" id="body" cols="15  " rows="2" ng-model="newReview.body" placeholder="Ecrivez un commentaire" class="form-control"></textarea>
+    <!-- <div>reviewForm is {{reviewForm.$valid}}</div> -->
     <input type="submit" value="commentez" class="btn btn-warning">
   </form>
 
+
+
+  </div>
 </div>
 
 

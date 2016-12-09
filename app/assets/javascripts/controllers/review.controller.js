@@ -1,7 +1,5 @@
-app.controller('ReviewController', function(){
-  this.review = {};
+// app.controller('ReviewController', function(){
 
-  this.addReview = function(movie) {
-    movie.reviews.push(this.review);
-  };
-});
+
+
+// });
