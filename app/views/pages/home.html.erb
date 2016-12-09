@@ -1,49 +1,11 @@
-<div class="wrapper">
-  <div class="container">
+<% if user_signed_in? %>
+  <div class="wrapper">
+    <div class="container">
 
-    <div ng-view></div>
+      <div ng-view></div>
 
-  </div>
-</div>
-
-
-
-
-
-
-
-<!-- <div class="wrapper">
-  <div class="container" ng-controller="MovieCtrl">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-  <form>
-    <div class="form-group" ng-controller="">
-      <label for="name">Full name</label>
-      <input type="text" class="form-control" placeholder="enter a name">
-    </div>
-    <div class="form-group">
-      <label for="name">email adress</label>
-      <input type="text" class="form-control" placeholder="enter a email">
-    </div>
-    <button type="submit" class="btn btn-submit" ng-click="onSubmit()">submit</button>
-  </form>
     </div>
   </div>
-  </div>
-</div>
- -->
-    <!-- <div ng-controller="MovieCtrl">
-      <form>
-        <input type="text" ng-model="titleModel.title"> <br>
-        <input type="text" ng-model="descriptionModel.description">
-        <input type="submit" value="Add" ng-click="onSubmit()">
-      </form>
-
-      <div ng-repeat="movie in movies">
-        <div class="col-xs-12 col-sm-3">
-          <h3>{{ movie.title }}</h3>
-          <p>{{movie.description}}</p>
-        </div>
-      </div>
-
-    </div> -->
+  <% else %>
+<h2>You need to sign in</h2>
+<% end %>

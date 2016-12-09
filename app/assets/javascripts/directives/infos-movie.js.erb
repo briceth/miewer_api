@@ -1,0 +1,15 @@
+angular.module('MovieApp')
+.directive('infosMovie', function() {
+  return {
+    restrict: 'E',
+    templateUrl: "<%= asset_path('templates/directives/infos-movie.html') %>",
+    scope: {
+      title: "=",
+      description: "=",
+      picture: "=",
+      rating: "=",
+      available: "=",
+      category: "="
+    },
+  };
+});
