@@ -1,27 +1,9 @@
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Postez votre film</h4>
-      </div>
-      <div class="modal-body">
-
-        <form ng-submit="addEntry()">
-          <label for="title">film</label>
-          <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film">
-          <label for="description">résumé</label>
-          <input id="description" type="text" class="form-control" ng-model="newMovie.description" placeholder="entrez un résumé">
-          <!--   <label for="file">choisissez une photo</label>
-          <input type="file" name="nom" ng-model="newMovie.picture" /> -->
-          <input type="submit" value="Add" class="btn btn-warning">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
+<form ng-submit="addEntry()">
+  <label for="title">film</label>
+  <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film">
+  <label for="description">résumé</label>
+  <input id="description" type="text" class="form-control" ng-model="newMovie.description" placeholder="entrez un résumé">
+  <!--   <label for="file">choisissez une photo</label>
+  <input type="file" name="nom" ng-model="newMovie.picture" /> -->
+  <input type="submit" value="Add" class="btn btn-warning">
+</form>
