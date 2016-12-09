@@ -22,10 +22,9 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-    <a class="btn btn-primary" ng-href="#/movies/new">Postez un film</a>
-
         <!-- <movie-form title="movie.title" description="movie.description" category="movie.category" rating="movie.rating" available="movie.available" picture="movie.picture"></movie-form> -->
         <form ng-submit="addEntry()" novalidate>
+
           <label for="title">film</label>
           <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film" required><br>
           <label for="description">résumé</label>

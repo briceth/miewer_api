@@ -12,7 +12,7 @@ angular.module('MovieApp')
     // $scope.addEntry
     $scope.updateMovie = function () {
     movie = Movie.save($scope.newMovie);
-     $scope.movies.push(movie);
+     $scope.movie.push(movie);
      $scope.newMovie = {};
    };
 
