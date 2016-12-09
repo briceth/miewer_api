@@ -5,4 +5,5 @@
 //= require angular-rails-templates
 //= require angular-route
 //= require angular-resource
+//= require angular-bootstrap
 //= require_tree .

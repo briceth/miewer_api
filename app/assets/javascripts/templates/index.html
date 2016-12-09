@@ -3,23 +3,18 @@
   <!-- <p ng-if="createController.erros">{{movie.data.errors}}</p> -->
     <div class="form-group" ng-controller="MoviesIndexController">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <h1>Post a film</h1>
-          <form ng-submit="addEntry()">
-            <label for="title">film</label>
-            <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film">
-            <label for="description">résumé</label>
-            <input id="description" type="text" class="form-control" ng-model="newMovie.description" placeholder="entrez un résumé">
-          <!--   <label for="file">choisissez une photo</label>
-            <input type="file" name="nom" ng-model="newMovie.picture" /> -->
-            <input type="submit" value="Add" class="btn btn-warning">
 
-          </form>
+
+            <nw-form></nw-form>
+
       </div>
         <div ng-repeat="movie in movies">
           <div class="col-xs-12 col-sm-3">
             <div class="card">
             <a ng-href="#/movies/{{movie.id}}">
-              <nw-card header="movie.title" description="movie.description"></nw-card>
+              <nw-card header="movie.title"
+              description="movie.description">
+              </nw-card>
             </a>
           </div>
         </div>

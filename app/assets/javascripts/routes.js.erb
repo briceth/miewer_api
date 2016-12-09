@@ -1,5 +1,5 @@
 angular.module('MovieApp')
-.config(function($routeProvider){
+.config(function($routeProvider, $locationProvider){
   $routeProvider.when('/movies', {
     templateUrl: "<%= asset_path('templates/index.html') %>",
     controller: 'MoviesIndexController',

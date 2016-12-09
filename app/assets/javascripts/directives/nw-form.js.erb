@@ -1,0 +1,11 @@
+angular.module('MovieApp')
+.directive('nwForm', function() {
+  return {
+    restrict: 'E',
+    templateUrl: "<%= asset_path('templates/directives/nw-form.html') %>",
+    scope: {
+      title: "=",
+      description: "="
+    },
+  };
+});

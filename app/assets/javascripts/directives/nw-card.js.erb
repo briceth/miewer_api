@@ -1,8 +1,8 @@
-angular.module('NoteWrangler')
+angular.module('MovieApp')
 .directive('nwCard', function() {
   return {
     restrict: 'E',
-    templateUrl: 'templates/directives/nw-card.html',
+    templateUrl: "<%= asset_path('templates/directives/nw-card.html') %>",
     scope: {
       title: "=",
       description: "="
