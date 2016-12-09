@@ -1,15 +1,15 @@
-angular.module('MovieApp')
-.config(function($routeProvider, $locationProvider){
-  $routeProvider.when('/movies', {
-    templateUrl: "<%= asset_path('templates/index.html') %>",
-    controller: 'MoviesIndexController',
-  })
-  .when('/movies/:id', {
-    templateUrl: "<%= asset_path('templates/show.html') %>",
-    controller: 'MoviesShowController',
-  })
-  .when('/', {
-    templateUrl: "<%= asset_path('templates/index.html') %>",
-  })
-  .otherwise( { redirectTo: '/'} );
-});
+// angular.module('MovieApp')
+// .config(function($routeProvider, $locationProvider){
+//   $routeProvider.when('/movies', {
+//     templateUrl: "<%= asset_path('templates/index.html') %>",
+//     controller: 'MoviesIndexController',
+//   })
+//   .when('/movies/:id', {
+//     templateUrl: "<%= asset_path('templates/show.html') %>",
+//     controller: 'MoviesShowController',
+//   })
+//   .when('/', {
+//     templateUrl: "<%= asset_path('templates/index.html') %>",
+//   })
+//   .otherwise( { redirectTo: '/'} );
+// });

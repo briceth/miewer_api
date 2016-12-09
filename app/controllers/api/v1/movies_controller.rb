@@ -6,6 +6,7 @@ class Api::V1::MoviesController < Api::V1::BaseController
   end
 
   def show
+
   end
 
   def new
@@ -29,7 +30,7 @@ class Api::V1::MoviesController < Api::V1::BaseController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :description, :picture)
+    params.require(:movie).permit(:title, :description, :picture, :category, :rating, :available)
   end
 
   def set_movie

@@ -1,0 +1,25 @@
+ var app = angular.module('MovieApp', ['ngRoute', 'ngResource', 'templates']);
+
+app.config(function($routeProvider, $locationProvider){
+  $locationProvider.html5Mode({
+  enabled: true,
+  requireBase: false
+});
+  $routeProvider
+  .when('/movies', {
+    templateUrl: "<%= asset_path('templates/index.html') %>",
+    controller: 'MoviesIndexController',
+  })
+  .when('/movies/:id', {
+    templateUrl: "<%= asset_path('templates/show.html') %>",
+    controller: 'MoviesShowController',
+  })
+  .when('/', {
+    templateUrl: "<%= asset_path('templates/index.html') %>",
+  })
+  .otherwise( { redirectTo: '/movies'} );
+});
+
+app.config(function($httpProvider) {
+  $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+});

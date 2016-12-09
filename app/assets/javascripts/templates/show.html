@@ -3,23 +3,22 @@
 <table class="table movietable" ng-controller="MoviesShowController">
     <tr>
         <td><h3>Details for {{movie.title}}</h3></td>
-        <td>ajouté par {{note.user || note.user.username }}</td>
     </tr>
     <tr>
         <td>Movie Title</td>
         <td>{{movie.title}}</td>
     </tr>
     <tr>
-        <td>Director</td>
+        <td>Résumé</td>
         <td>{{movie.description}}</td>
     </tr>
     <tr>
-        <td>Release Year</td>
-        <td>{{movie.releaseYear}}</td>
+        <td>Film</td>
+        <td>{{movie.available}}</td>
     </tr>
     <tr>
-        <td>Movie Genre</td>
-        <td>{{movie.genre}}</td>
+        <td>Movie categoy</td>
+        <td>{{movie.categry}}</td>
     </tr>
 </table>
 <div>
