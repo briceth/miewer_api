@@ -6,9 +6,11 @@ angular.module('MovieApp')
 
   $scope.movies = Movie.query();
 
+console.log($scope.movies);
+
     $scope.addEntry = function () {
     movie = Movie.save($scope.newMovie);
-    console.log(movie);
+console.log(movie);
      $scope.movies.push(movie);
      $scope.newMovie = {};
    };
