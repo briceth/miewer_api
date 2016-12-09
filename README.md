@@ -1,1 +1,10 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+
+#### git clone git@github.com:briceth/miewer_api.git
+
+#### cd miewer_api
+
+#### bundle install
+
+#### rails db:create db:migrate db:seed
+
+#### rails s

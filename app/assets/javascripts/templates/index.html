@@ -26,8 +26,11 @@
 
       <div ng-include="'partials/_form.html'"></div>
 
-    </form>
-        <form ng-submit="addEntry()" novalidate>
+      </form>
+
+      <movie-form></movie-form>
+
+        <!-- <form ng-submit="addEntry()" novalidate>
           <label for="title">film</label>
           <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film" required><br>
           <label for="description">résumé</label>
@@ -45,7 +48,7 @@
           <label for="checkbox">en salle?</label>
           <input type="checkbox" ng-model="newMovie.available"><br>
           <input type="submit" value="Add" class="btn btn-warning"><br>
-        </form>
+        </form> -->
 
       </div>
     </div>
