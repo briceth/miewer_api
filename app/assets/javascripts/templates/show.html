@@ -1,26 +1,31 @@
 <div ng-if="movie.picture"></div>
+<div class="col-xs-12 col-sm-6">
+  <table class="table movietable" ng-controller="MoviesShowController">
+      <tr>
+          <td><h3>Informations sur {{movie.title}}</h3></td>
+      </tr>
+      <tr>
+          <td><strong>Movie Title</strong></td>
+          <td>{{movie.title}}</td>
+      </tr>
+      <tr>
+          <td><strong>Résumé</strong></td>
+          <td>{{movie.description}}</td>
+      </tr>
+      <tr>
+          <td>En salle actuellement?</td>
+          <td>{{movie.available}}</td>
+      </tr>
+      <tr>
+          <td>Genre</td>
+          <td>{{movie.category}}</td>
+      </tr>
+  </table>
 
-<table class="table movietable" ng-controller="MoviesShowController">
-    <tr>
-        <td><h3>Details for {{movie.title}}</h3></td>
-    </tr>
-    <tr>
-        <td>Movie Title</td>
-        <td>{{movie.title}}</td>
-    </tr>
-    <tr>
-        <td>Résumé</td>
-        <td>{{movie.description}}</td>
-    </tr>
-    <tr>
-        <td>Film</td>
-        <td>{{movie.available}}</td>
-    </tr>
-    <tr>
-        <td>Movie categoy</td>
-        <td>{{movie.categry}}</td>
-    </tr>
-</table>
-<div>
-    <a class="btn btn-primary" ui-sref="editMovie({id:movie._id})">Edit</a>
+
+    <a class="btn btn-primary" ng-href="#/movies/edit/{{movie.id}}">Edit</a>
+    <a class="btn btn-warning" ng-href="#/movies/">retour</a>
 </div>
+
+
+

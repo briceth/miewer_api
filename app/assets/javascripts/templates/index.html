@@ -5,10 +5,12 @@
         <div ng-repeat="movie in movies">
           <div class="col-xs-12 col-sm-8 col-sm-offset-2">
             <div class="product">
+
               <div class='product-body'>
                <nw-card title="movie.title" description="movie.description" category="movie.category">
                </nw-card>
               </div>
+
               <ul class="list-inline product-controls hidden-sm hidden-xs">
                 <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
               </ul>
@@ -16,34 +18,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-          <!-- <nw-form></nw-form> -->
-        <form ng-submit="addEntry()">
-          <label for="title">film</label>
-          <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film"><br>
-          <label for="description">résumé</label>
-          <input id="description" type="text" class="form-control" ng-model="newMovie.description" placeholder="entrez un résumé"><br>
-          <label for="select">catégorie</label>
-          <select ng-model="newMovie.category">
-            <option value="dramatique">Dramatique</option>
-            <option value="Comédie">Comédie</option>
-            <option value="Horreur">Horreur</option>
-            <option value="Action">Action</option>
-            <option value="Romantique">Romantique</option>
-          </select><br><br>
-          <label for="select">Note</label>
-          <select ng-model="newMovie.rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select><br><br>
-          <label for="checkbox">en salle?</label>
-          <input type="checkbox" ng-model="newMovie.available"><br>
-          <!--   <label for="file">choisissez une photo</label>
-          <input type="file" name="nom" ng-model="newMovie.picture" /> -->
-          <input type="submit" value="Add" class="btn btn-warning">
-        </form>
+        <nw-form></nw-form>
       </div>
     </div>
   </div>
