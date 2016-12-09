@@ -22,9 +22,12 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-        <!-- <movie-form title="movie.title" description="movie.description" category="movie.category" rating="movie.rating" available="movie.available" picture="movie.picture"></movie-form> -->
-        <form ng-submit="addEntry()" novalidate>
+     <form class="form-horizontal" role="form" ng-submit="addEntry()">
 
+      <div ng-include="'partials/_form.html'"></div>
+
+    </form>
+        <form ng-submit="addEntry()" novalidate>
           <label for="title">film</label>
           <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film" required><br>
           <label for="description">résumé</label>
@@ -38,18 +41,9 @@
             <option value="Romantique">Romantique</option>
           </select><br><br>
           <label for="select">Note</label>
-          <select ng-model="newMovie.rating" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select><br><br>
+          <select ng-model="newMovie.rating" required ng-options="stars for stars in [5,4,3,2,1]"  title="Stars"></select><br><br>
           <label for="checkbox">en salle?</label>
           <input type="checkbox" ng-model="newMovie.available"><br>
-          <!-- <label for="file">choisissez une photo</label>
-          <input type="file" name="nom" ng-model="newMovie.picture" /><br> -->
-         <!--  <div>reviewForm is {{reviewForm.$valid}}</div> -->
           <input type="submit" value="Add" class="btn btn-warning"><br>
         </form>
 
