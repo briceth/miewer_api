@@ -1,7 +1,14 @@
 angular.module('MovieApp')
 .controller('MoviesIndexController', function($scope, $resource) {
 
+  var controller = this;
+
+  controller.errors = null;
+
   var  Movie = $resource('/api/v1/movies/:id', {id: "@id"}, {update: {method: "PUT"}})
+  .catch(function(movie) {
+    controller.errors = movie.data.errors;
+  })
 
 
   $scope.movies = Movie.query();

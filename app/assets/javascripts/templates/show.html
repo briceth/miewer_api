@@ -1,6 +1,6 @@
 <div ng-if="movie.picture"></div>
 
-<table class="table movietable">
+<table class="table movietable" ng-controller="MoviesShowController">
     <tr>
         <td><h3>Details for {{movie.title}}</h3></td>
         <td>ajouté par {{note.user || note.user.username }}</td>

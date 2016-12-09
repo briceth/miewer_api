@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="container">
+  <!-- <p ng-if="createController.erros">{{movie.data.errors}}</p> -->
     <div class="form-group" ng-controller="MoviesIndexController">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
         <h1>Post a film</h1>
@@ -18,9 +19,7 @@
           <div class="col-xs-12 col-sm-3">
             <div class="card">
             <a ng-href="#/movies/{{movie.id}}">
-              <h4><strong>titre:</strong>{{movie.title}}</h4>
-              <p><strong>résumé:</strong>{{movie.description}}</p>
-              <!-- <img ng-src="{{movie.picture}}"" alt="picture"> -->
+              <nw-card header="movie.title" description="movie.description"></nw-card>
             </a>
           </div>
         </div>
