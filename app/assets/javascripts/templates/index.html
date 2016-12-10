@@ -13,30 +13,32 @@
 
         </div>
 
-        <div ng-repeat="movie in movies | filter:{category:currentCategory.name}">
-          <div class="col-xs-12 col-sm-3 ">
+      <div ng-repeat="movie in movies | filter:{category:currentCategory.name}">
+        <div class="col-xs-12 col-sm-3 ">
 
-              <div class="product">
-                <div class='product-body'>
+            <div class="product">
+              <div class='product-body'>
 
-                 <movie-card title="movie.title" category="movie.category">
-                 </movie-card>
+               <movie-card title="movie.title" category="movie.category">
+               </movie-card>
 
-                </div>
-
-                <ul class="list-inline product-controls hidden-sm hidden-xs">
-                  <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
-                  <li><a><i class="fa fa-pencil" aria-hidden="true" ng-click="setEditedMovie(movie);startEditing();"></i></a></li>
-                </ul>
               </div>
-          </div>
+
+              <ul class="list-inline product-controls hidden-sm hidden-xs">
+                <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
+                <li><a><i class="fa fa-pencil" aria-hidden="true" ng-click="setEditedMovie(movie);startEditing();"></i></a></li>
+              </ul>
+            </div>
+
         </div>
+      </div>
 
       <div class="col-xs-12 col-sm-6 col-sm-offset-2">
-        <div>
-           <button class="btn btn-danger" ng-click="startCreating();">Postez un film</button>
 
-           <div ng-show="isCreating">
+        <button class="btn btn-danger" ng-click="startCreating()">Postez un film</button>
+
+           <div ng-if="isCreating">
+
             <form ng-submit="addEntry()" novalidate>
 
               <label for="title">film</label>
@@ -61,12 +63,15 @@
               <input type="checkbox" ng-model="newMovie.available"><br>
 
               <input type="submit" value="Add" class="btn btn-warning">
+
             </form>
-              <button class="btn btn-danger" ng-click="cancelCreating();">stop</button>
+
+              <button class="btn btn-danger" ng-click="cancelCreating()">stop</button>
             </div>
 
 
-          <div ng-show="isEditing">
+          <div ng-if="isEditing">
+
             <form ng-submit="updateMovie(editedMovie)" novalidate>
 
               <label for="title">film</label>
@@ -91,14 +96,14 @@
               <input type="checkbox" ng-model="editedMovie.available"><br>
 
               <input type="submit" value="Add" class="btn btn-warning">
+
             </form>
-              <button class="btn btn-danger" ng-click="cancelEditing();">stop</button>
+
+              <button class="btn btn-danger" ng-click="cancelEditing()">stop</button>
             </div>
 
 
 
-
-           </div>
           </div>
         </div>
       </div>

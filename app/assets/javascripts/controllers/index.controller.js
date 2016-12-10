@@ -29,8 +29,8 @@ app.controller("MoviesIndexController", function($scope, $resource, Movie) {
   }
 
   $scope.updateMovie = function(editedMovie) {
-    movie = Movie.update(editedMovie);
-    $scope.movies.push(movie);
+    updatedMovie = Movie.update(editedMovie);
+    $scope.movies.push(updatedMovie);
     $scope.editedMovie = null;
     $scope.isEditing = true;
   };
