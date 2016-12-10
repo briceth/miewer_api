@@ -1,11 +1,8 @@
 .sidebar {
   background-color: grey;
-  height: 100vh;
+  height: 120vh;
   color: white;
-  font-size: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  font-size: 20px;
   a {
     text-decoration: none;
     color: white;
@@ -15,5 +12,8 @@
   }
 }
 .category {
-  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70vh;
 }

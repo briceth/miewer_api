@@ -3,13 +3,13 @@
     <div class="row">
       <div class="cards" ng-controller="MoviesIndexController">
         <div class="col-sm-3 col-md-2 sidebar">
-          <div ng-repeat="category in categories">
 
-            <a class="category" ng-click="setCurrentCategory(category)">{{category.name}}</a>
-
+          <div class="category">
+              <a ng-click="setCurrentCategory(null)">all</a>
+            <div ng-repeat="category in categories">
+              <a  ng-click="setCurrentCategory(category)">{{category.name}}</a>
+            </div>
           </div>
-
-            <a ng-click="setCurrentCategory(null)">all</a>
 
         </div>
 
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-2">
         <div>
            <button class="btn btn-danger" ng-click="startCreating();">Postez un film</button>
 
@@ -60,11 +60,11 @@
               <label for="checkbox">en salle?</label>
               <input type="checkbox" ng-model="newMovie.available"><br>
 
-              <input type="submit" value="Add" class="btn btn-warning"><br>
+              <input type="submit" value="Add" class="btn btn-warning">
             </form>
-
-              <button class="btn btn-danger pull-right" ng-click="cancelCreating();">stop</button>
+              <button class="btn btn-danger" ng-click="cancelCreating();">stop</button>
             </div>
+
 
           <div ng-show="isEditing">
             <form ng-submit="updateMovie(editedMovie)" novalidate>
@@ -90,10 +90,9 @@
               <label for="checkbox">en salle?</label>
               <input type="checkbox" ng-model="editedMovie.available"><br>
 
-              <input type="submit" value="Add" class="btn btn-warning"><br>
+              <input type="submit" value="Add" class="btn btn-warning">
             </form>
-
-              <button class="btn btn-danger pull-right" ng-click="cancelEditing();">stop</button>
+              <button class="btn btn-danger" ng-click="cancelEditing();">stop</button>
             </div>
 
 
