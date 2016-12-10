@@ -7,13 +7,13 @@ angular.module('MovieApp')
 
   // $scope.movies = Movie.query();
 
-    console.log($scope.movie)
+    // console.log($scope.movie)
 
     // $scope.addEntry
-    $scope.updateMovie = function () {
-    movie = Movie.save($scope.newMovie);
-     $scope.movie.push(movie);
-     $scope.newMovie = {};
-   };
+   //  $scope.updateMovie = function () {
+   //  movie = Movie.save($scope.newMovie);
+   //   $scope.movie.push(movie);
+   //   $scope.newMovie = {};
+   // };
 
 });

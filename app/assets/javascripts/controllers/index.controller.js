@@ -1,24 +1,20 @@
-app.controller("MoviesIndexController", function($scope, $location, $resource, Movie) {
+app.controller("MoviesIndexController", function($scope, $resource, Movie) {
   $scope.movies = Movie.index();
 
-  // $scope.new = function() {
-  //   $location.path("/movies/new");
-  // };
+///////////////////////////////////////// add movie feature
+    function startCreating() {
+      $scope.isCreating = true;
+      // $scope.isEditing = false;
+   }
 
-    // Movie = $resource('/api/v1/movies/:id', {id: "@id"}, {update: {method: "PUT"}})
-
-  // $scope.movies = Movie.query();
-
-    //add movie feature
     $scope.addEntry = function () {
-    movie = Movie.save($scope.newMovie);
-     $scope.movies.push(movie);
-     $scope.newMovie = {};
+      movie = Movie.save($scope.newMovie);
+      $scope.movies.push(movie);
+      $scope.newMovie = {};
    };
 
 
-    //sidebar feature
-
+/////////////////////////////////////////////sidebar feature
    $scope.categories = [
     {name: "Comédie"},
     {name: "Action"},
@@ -33,11 +29,9 @@ app.controller("MoviesIndexController", function($scope, $location, $resource, M
       $scope.currentCategory = category;
    }
    $scope.setCurrentCategory = setCurrentCategory;
+///////////////////////////////////////////////////////////
 
 
-
-
-   $scope.isCreating = false;
    $scope.isEditing = false;
 
    function startCreating() {
@@ -62,7 +56,6 @@ app.controller("MoviesIndexController", function($scope, $location, $resource, M
    $scope.cancelCreating = cancelCreating;
    $scope.startEditing = startEditing;
    $scope.cancelEditing = cancelCreating;
-
 
 
 });

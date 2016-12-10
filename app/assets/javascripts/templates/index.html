@@ -13,8 +13,8 @@
 
         </div>
 
-          <div ng-repeat="movie in movies | filter:{category:currentCategory.name}">
-            <div class="col-xs-12 col-sm-3 ">
+        <div ng-repeat="movie in movies | filter:{category:currentCategory.name}">
+          <div class="col-xs-12 col-sm-3 ">
 
               <div class="product">
                 <div class='product-body'>
@@ -28,26 +28,30 @@
                   <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
                 </ul>
               </div>
-
           </div>
         </div>
-      </div>
+
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
         <div>
          <button class="btn btn-danger" ng-click="startCreating();">Postez un film</button>
-         <div ng-if="isCreating">
 
+         <div ng-show="isCreating">
           <form ng-submit="addEntry()" novalidate>
             <label for="title">film</label>
             <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film" required><br>
+
             <label for="description">résumé</label>
             <input id="description" type="text" class="form-control" ng-model="newMovie.description" placeholder="entrez un résumé" required><br>
+
             <label for="select">catégorie</label>
             <select ng-model="newMovie.category" ng-options="option.name for option in categories " required></select><br><br>
+
             <label for="select">Note</label>
             <select ng-model="newMovie.rating" required ng-options="stars for stars in [5,4,3,2,1]"  title="Stars"></select><br><br>
+
             <label for="checkbox">en salle?</label>
             <input type="checkbox" ng-model="newMovie.available"><br>
+
             <input type="submit" value="Add" class="btn btn-warning"><br>
           </form>
 
@@ -55,6 +59,11 @@
             </div>
           </div>
         </div>
+
+        </div>
+
+
+
       </div>
     </div>
   </div>
