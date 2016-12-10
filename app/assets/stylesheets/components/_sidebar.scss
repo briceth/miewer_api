@@ -2,6 +2,10 @@
   background-color: grey;
   height: 100vh;
   color: white;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   a {
     text-decoration: none;
     color: white;
@@ -9,4 +13,7 @@
       color:#333333;
     }
   }
+}
+.category {
+  margin-bottom: 2em;
 }
