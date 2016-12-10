@@ -3,12 +3,7 @@ app.controller("MoviesShowController", function($scope, $resource, $routeParams,
 
     var controller = this;
 
-    console.log($scope.movie);
-
    $scope.addReview = function() {
-
-    console.log($scope.newReview);
-
 
   };
 
