@@ -1,11 +1,9 @@
 <% if user_signed_in? %>
-  <div class="wrapper">
-    <div class="container">
 
       <div ng-view></div>
 
-    </div>
-  </div>
   <% else %>
+
 <h2>You need to sign in</h2>
+
 <% end %>

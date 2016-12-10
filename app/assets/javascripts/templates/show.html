@@ -1,33 +1,35 @@
-<div ng-controller="MoviesShowController">
-  <div class="col-xs-12 col-sm-6">
+<div class="wrapper-show">
+   <div ng-controller="MoviesShowController">
+    <div class="col-xs-12 col-sm-6">
 
-    <infos-movie title="movie.title" description="movie.description" category="movie.category" rating="movie.rating" available="movie.available"></infos-movie>
+      <infos-movie title="movie.title" description="movie.description" category="movie.category" rating="movie.rating" available="movie.available"></infos-movie>
 
-    <a class="btn btn-warning" ng-href="#/movies/">retour</a>
-  </div>
-
-  <div ng-show="movie.picture">
-    <img ng-src="{{picture}}"" alt="picture">
-  </div>
-
-<div class="col-xs-12 col-sm-6">
-
-    <!-- <form-review></form-review> -->
-
-  <form name="reviewForm" ng-controller="MoviesShowController" ng-submit="addReview()">
-    <div ng-repeat="movie in movies">
-      <blockquote>
-        <p>{{movie.reviews.body}}</p>
-      </blockquote>
+      <a class="btn btn-warning" ng-href="#/movies/">retour</a>
     </div>
 
-    <label for="body">Commentaires</label>
+    <div ng-show="movie.picture">
+      <img ng-src="{{picture}}"" alt="picture">
+    </div>
 
-    <textarea name="" id="body" cols="15  " rows="2" ng-model="newReview.body" placeholder="Ecrivez un commentaire" class="form-control"></textarea>
+  <div class="col-xs-12 col-sm-6">
 
-    <input type="submit" value="commentez" class="btn btn-warning">
-  </form>
+      <!-- <form-review></form-review> -->
 
+    <form name="reviewForm" ng-controller="MoviesShowController" ng-submit="addReview()">
+      <div ng-repeat="movie in movies">
+        <blockquote>
+          <p>{{movie.reviews.body}}</p>
+        </blockquote>
+      </div>
+
+      <label for="body">Commentaires</label>
+
+      <textarea name="" id="body" cols="15  " rows="2" ng-model="newReview.body" placeholder="Ecrivez un commentaire" class="form-control"></textarea>
+
+      <input type="submit" value="commentez" class="btn btn-warning">
+    </form>
+
+    </div>
   </div>
 </div>
 
