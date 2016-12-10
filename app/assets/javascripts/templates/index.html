@@ -26,7 +26,7 @@
 
                 <ul class="list-inline product-controls hidden-sm hidden-xs">
                   <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
-                  <li><a><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                  <li><a><i class="fa fa-pencil" aria-hidden="true" ng-click="setEditedMovie(movie);startEditing();"></i></a></li>
                 </ul>
               </div>
           </div>
@@ -65,6 +65,40 @@
 
               <button class="btn btn-danger pull-right" ng-click="cancelCreating();">stop</button>
             </div>
+
+          <div ng-show="isEditing">
+            <form ng-submit="updateMovie(editedMovie)" novalidate>
+
+              <label for="title">film</label>
+              <input id="title" type="text" class="form-control" ng-model="editedMovie.title" placeholder="entrez un film" required><br>
+
+              <label for="description">résumé</label>
+              <input id="description" type="text" class="form-control" ng-model="editedMovie.description" placeholder="entrez un résumé" required><br>
+
+              <label for="select">catégorie</label>
+              <select ng-model="editedMovie.category" required>
+                <option value="dramatique">Dramatique</option>
+                <option value="Comédie">Comédie</option>
+                <option value="Horreur">Horreur</option>
+                <option value="Action">Action</option>
+                <option value="Romantique">Romantique</option>
+              </select><br><br>
+
+              <label for="select">Note</label>
+              <select ng-model="editedMovie.rating" required ng-options="stars for stars in [5,4,3,2,1]"  title="Stars"></select><br><br>
+
+              <label for="checkbox">en salle?</label>
+              <input type="checkbox" ng-model="editedMovie.available"><br>
+
+              <input type="submit" value="Add" class="btn btn-warning"><br>
+            </form>
+
+              <button class="btn btn-danger pull-right" ng-click="cancelEditing();">stop</button>
+            </div>
+
+
+
+
            </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 class Api::V1::MoviesController < Api::V1::BaseController
-  before_action :set_movie, only: [ :show, :edit ]
+  before_action :set_movie, only: [ :show, :edit, :update ]
 
   def index
     @movies = policy_scope(Movie)
@@ -28,6 +28,11 @@ class Api::V1::MoviesController < Api::V1::BaseController
   end
 
   def update
+    if @movie.update(movie_params)
+      render :show
+    else
+      render_error
+    end
   end
 
   def destroy

@@ -1,17 +1,49 @@
 app.controller("MoviesIndexController", function($scope, $resource, Movie) {
   $scope.movies = Movie.index();
 
-///////////////////////////////////////// add movie feature
-    function startCreating() {
+/////////////////////////////////////////Add movie feature
+    $scope.isEditing = false;
+    $scope.isCreating = false;
+
+    $scope.startCreating = function() {
       $scope.isCreating = true;
-      // $scope.isEditing = false;
+      $scope.isEditing = false;
    }
 
-    $scope.addEntry = function () {
+    $scope.addEntry = function() {
       movie = Movie.save($scope.newMovie);
       $scope.movies.push(movie);
       $scope.newMovie = {};
    };
+
+  $scope.cancelCreating = function() {
+      $scope.isCreating = false;
+   }
+
+/////////////////////////////////////////Edit movie feature
+
+  $scope.editedMovie = null;
+
+  $scope.setEditedMovie = function(movie) {
+    $scope.editedMovie = angular.copy(movie);
+  }
+
+  $scope.updateMovie = function(editedMovie) {
+    movie = Movie.update(editedMovie);
+    $scope.movies.push(movie);
+    $scope.editedMovie = null;
+    $scope.isEditing = true;
+  };
+
+
+   $scope.startEditing = function() {
+      $scope.isCreating = false;
+      $scope.isEditing = true;
+   }
+
+  $scope.cancelEditing = function() {
+      $scope.isEditing = false;
+   }
 
 
 /////////////////////////////////////////////sidebar feature
@@ -25,37 +57,8 @@ app.controller("MoviesIndexController", function($scope, $resource, Movie) {
 
    $scope.currentCategory = null;
 
-   function setCurrentCategory(category) {
+  $scope.setCurrentCategory = function(category) {
       $scope.currentCategory = category;
    }
-   $scope.setCurrentCategory = setCurrentCategory;
-///////////////////////////////////////////////////////////
-
-
-   $scope.isEditing = false;
-
-   function startCreating() {
-      $scope.isCreating = true;
-      $scope.isEditing = false;
-   }
-
-   function cancelCreating() {
-      $scope.isCreating = false;
-   }
-
-   function startEditing() {
-      $scope.isCreating = false;
-      $scope.isEditing = true;
-   }
-
-   function cancelEditing() {
-      $scope.isEditing = false;
-   }
-
-   $scope.startCreating = startCreating;
-   $scope.cancelCreating = cancelCreating;
-   $scope.startEditing = startEditing;
-   $scope.cancelEditing = cancelCreating;
-
 
 });
