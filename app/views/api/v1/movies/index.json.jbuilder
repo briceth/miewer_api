@@ -1,5 +1,5 @@
-# json.movies do
+
   json.array! @movies do |movie|
-    json.extract! movie, :id, :title, :description, :picture, :reviews
+    json.extract! movie, :id, :title, :category, :reviews
   end
-# end
+

@@ -1,14 +1,22 @@
 <div class="wrapper">
   <div class="container">
-  <!-- <p ng-if="createController.erros">{{movie.data.errors}}</p> -->
-    <div class="form-group" ng-controller="MoviesIndexController">
-        <div ng-repeat="movie in movies | orderBy:'rating'">
-          <div class="col-xs-12 col-sm-3 ">
-            <div class="product">
+    <div class="row">
+    <div class="cards" ng-controller="MoviesIndexController">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <div ng-repeat="category in categories">
 
+            <a ng-click="setCurrentCategory(category)">{{category.name}}</a>
+        </div>
+            <a ng-click="setCurrentCategory(null)">all</a>
+      </div>
+        <div ng-repeat="movie in movies | filter:{category:currentCategory.name}">
+
+          <div class="col-xs-12 col-sm-3 ">
+
+            <div class="product">
               <div class='product-body'>
 
-               <movie-card title="movie.title" description="movie.description" category="movie.category">
+               <movie-card title="movie.title" category="movie.category">
                </movie-card>
 
               </div>
@@ -16,21 +24,14 @@
               <ul class="list-inline product-controls hidden-sm hidden-xs">
                 <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
               </ul>
-
             </div>
+
         </div>
       </div>
+    </div>
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-     <form class="form-horizontal" role="form" ng-submit="addEntry()">
-
-      <div ng-include="'partials/_form.html'"></div>
-
-      </form>
-
-      <movie-form></movie-form>
-
-        <!-- <form ng-submit="addEntry()" novalidate>
+        <form ng-submit="addEntry()" novalidate>
           <label for="title">film</label>
           <input id="title" type="text" class="form-control" ng-model="newMovie.title" placeholder="entrez un film" required><br>
           <label for="description">résumé</label>
@@ -48,8 +49,9 @@
           <label for="checkbox">en salle?</label>
           <input type="checkbox" ng-model="newMovie.available"><br>
           <input type="submit" value="Add" class="btn btn-warning"><br>
-        </form> -->
+        </form>
 
+      </div>
       </div>
     </div>
   </div>
