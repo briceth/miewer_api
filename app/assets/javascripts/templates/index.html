@@ -1,35 +1,42 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-    <div class="cards" ng-controller="MoviesIndexController">
-      <div class="col-sm-3 col-md-2 sidebar">
-        <div ng-repeat="category in categories">
+      <div class="cards" ng-controller="MoviesIndexController">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <div ng-repeat="category in categories">
 
             <a ng-click="setCurrentCategory(category)">{{category.name}}</a>
-        </div>
+
+          </div>
+
             <a ng-click="setCurrentCategory(null)">all</a>
-      </div>
-        <div ng-repeat="movie in movies | filter:{category:currentCategory.name}">
 
-          <div class="col-xs-12 col-sm-3 ">
+        </div>
 
-            <div class="product">
-              <div class='product-body'>
+          <div ng-repeat="movie in movies | filter:{category:currentCategory.name}">
+            <div class="col-xs-12 col-sm-3 ">
 
-               <movie-card title="movie.title" category="movie.category">
-               </movie-card>
+              <div class="product">
+                <div class='product-body'>
 
+                 <movie-card title="movie.title" category="movie.category">
+                 </movie-card>
+
+                </div>
+
+                <ul class="list-inline product-controls hidden-sm hidden-xs">
+                  <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
+                </ul>
               </div>
 
-              <ul class="list-inline product-controls hidden-sm hidden-xs">
-                <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
-              </ul>
-            </div>
-
+          </div>
         </div>
       </div>
-    </div>
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div>
+         <button class="btn btn-danger" ng-click="startCreating();">Postez un film</button>
+         <div ng-if="isCreating">
+          <button class="btn btn-danger" ng-click="cancelCreating();">stop</button>
 
         <form ng-submit="addEntry()" novalidate>
           <label for="title">film</label>
@@ -51,7 +58,9 @@
           <input type="submit" value="Add" class="btn btn-warning"><br>
         </form>
 
-      </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

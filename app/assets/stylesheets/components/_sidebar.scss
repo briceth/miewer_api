@@ -1,5 +1,12 @@
 .sidebar {
   background-color: grey;
   height: 100vh;
-  // padding-left: 150px;
+  color: white;
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      color:#333333;
+    }
+  }
 }

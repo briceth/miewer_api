@@ -17,20 +17,18 @@
     <!-- <form-review></form-review> -->
 
   <form name="reviewForm" ng-controller="MoviesShowController" ng-submit="addReview()">
-
-  <div ng-repeat="movie in movies">
-    <blockquote>
-      <p>{{movie.reviews.body}}</p>
-    </blockquote>
-  </div>
+    <div ng-repeat="movie in movies">
+      <blockquote>
+        <p>{{movie.reviews.body}}</p>
+      </blockquote>
+    </div>
 
     <label for="body">Commentaires</label>
+
     <textarea name="" id="body" cols="15  " rows="2" ng-model="newReview.body" placeholder="Ecrivez un commentaire" class="form-control"></textarea>
-    <!-- <div>reviewForm is {{reviewForm.$valid}}</div> -->
+
     <input type="submit" value="commentez" class="btn btn-warning">
   </form>
-
-
 
   </div>
 </div>
