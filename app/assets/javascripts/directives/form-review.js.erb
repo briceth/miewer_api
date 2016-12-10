@@ -1,0 +1,15 @@
+angular.module('MovieApp')
+.directive('movieForm', function() {
+  return {
+    restrict: 'E',
+    templateUrl: "<%= asset_path('templates/directives/form-review.html') %>",
+    scope: {
+      title: "=",
+      description: "=",
+      picture: "=",
+      rating: "=",
+      available: "=",
+      category: "="
+    },
+  };
+});
