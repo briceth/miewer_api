@@ -51,10 +51,7 @@ app.controller("MoviesIndexController", function($scope, $resource, lodash, Movi
 //////////////////////////////////////////////Delete feature
 
   $scope.deleteMovie = function(movie) {
-   deletedMovie = $scope.movies.findIndex(function(m){
-        return m.id == movie.id;
-      });
-    $scope.movies.splice(deletedMovie, 1);
+    Movie.delete({ id: movie.id });
     $scope.movies = _.without($scope.movies, movie);
   };
 
