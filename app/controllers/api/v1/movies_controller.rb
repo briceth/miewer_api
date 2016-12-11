@@ -1,5 +1,5 @@
 class Api::V1::MoviesController < Api::V1::BaseController
-  before_action :set_movie, only: [ :show, :edit, :update ]
+  before_action :set_movie, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @movies = policy_scope(Movie)
@@ -33,9 +33,12 @@ class Api::V1::MoviesController < Api::V1::BaseController
     else
       render_error
     end
+    head :no_content
   end
 
   def destroy
+    @movie.destroy
+    head :no_content
   end
 
   private

@@ -27,6 +27,7 @@
                 <ul class="list-inline product-controls hidden-sm hidden-xs">
                   <li><a ng-href="#/movies/{{movie.id}}"><i class="fa fa-share"></i></a></li>
                   <li><a><i class="fa fa-pencil" aria-hidden="true" ng-click="setEditedMovie(movie);startEditing();"></i></a></li>
+                  <li><a ng-click="deleteMovie(movie)">delete</a></li>
                 </ul>
               </div>
 
@@ -37,7 +38,7 @@
 
           <button class="btn btn-danger" ng-click="startCreating()">Postez un film</button>
 
-             <div ng-if="isCreating">
+             <div ng-show="isCreating">
 
               <form ng-submit="addEntry()" novalidate>
 
@@ -70,7 +71,7 @@
               </div>
 
 
-            <div ng-if="isEditing">
+            <div ng-show="isEditing">
 
               <form ng-submit="updateMovie(editedMovie)" novalidate>
 

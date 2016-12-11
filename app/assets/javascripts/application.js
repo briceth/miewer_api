@@ -7,4 +7,5 @@
 //= require angular-resource
 //= require angular-bootstrap
 //= require underscore
+//= require ng-lodash
 //= require_tree .
