@@ -36,9 +36,6 @@ app.controller("MoviesIndexController", function($scope, $resource, lodash, Movi
     Movie.update(editedMovie);
     $scope.editedMovie = null;
     $scope.isEditing = true;
-    // updatedMovie = Movie.update(editedMovie);
-    // $scope.movies.push(updatedMovie);
-    // newScope = _.without($scope.movies, editedMovie);
 
   };
 
@@ -53,13 +50,13 @@ app.controller("MoviesIndexController", function($scope, $resource, lodash, Movi
    }
 //////////////////////////////////////////////Delete feature
 
-  // $scope.deleteMovie = function(movie) {
-  //  deletedMovie = $scope.movies.findIndex(function(m){
-  //       return m.id == movie.id;
-  //     });
-  //   $scope.movies.splice(deletedMovie, 1);
-  //   $scope.movies = _.without($scope.movies, movie);
-  // };
+  $scope.deleteMovie = function(movie) {
+   deletedMovie = $scope.movies.findIndex(function(m){
+        return m.id == movie.id;
+      });
+    $scope.movies.splice(deletedMovie, 1);
+    $scope.movies = _.without($scope.movies, movie);
+  };
 
 
 /////////////////////////////////////////////sidebar feature

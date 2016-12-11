@@ -16,5 +16,9 @@ class MoviePolicy < ApplicationPolicy
       true
     end
 
+    def destroy?
+      true
+    end
+
   end
 end

@@ -38,6 +38,7 @@ class Api::V1::MoviesController < Api::V1::BaseController
 
   def destroy
     @movie.destroy
+    authorize @movie
     head :no_content
   end
 
